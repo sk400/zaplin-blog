@@ -1,7 +1,6 @@
 "use client";
-import { Box, Heading, Image, Tag, Text } from "@chakra-ui/react";
+
 import { Loader, TopContainer } from "components";
-import { urlFor } from "lib/sanity.client";
 import React from "react";
 import { useQuery } from "react-query";
 import { fetchPostDetails } from "utils/fetchPostDetails";

@@ -60,10 +60,7 @@ const NavBar = () => {
               <Link href="/" color="white" _hover={{ opacity: 0.8 }}>
                 Home
               </Link>
-              <Link href="/about" color="white" _hover={{ opacity: 0.8 }}>
-                About
-              </Link>
-              <Link href="/posts" color="white" _hover={{ opacity: 0.8 }}>
+              <Link href="/post" color="white" _hover={{ opacity: 0.8 }}>
                 Articles
               </Link>
             </HStack>

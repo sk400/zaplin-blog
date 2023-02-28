@@ -14,10 +14,9 @@ const Searchbar = ({ setInputText, setSearchTerm, inputText }) => {
   return (
     <form onSubmit={handleSubmit} className="px-5">
       <InputGroup>
-        <InputLeftElement
-          pointerEvents="none"
-          children={<SearchIcon color="gray" fontSize="sm" />}
-        />
+        <InputLeftElement pointerEvents="none">
+          <SearchIcon color="gray" fontSize="sm" />
+        </InputLeftElement>
         <Input
           type="text"
           placeholder="Search..."
@@ -34,3 +33,5 @@ const Searchbar = ({ setInputText, setSearchTerm, inputText }) => {
 };
 
 export default Searchbar;
+
+// Do not pass children as props. Instead, nest children between the opening and closing tags.  react/no-children-prop
