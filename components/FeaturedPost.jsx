@@ -1,6 +1,6 @@
 import { Box, Divider, Heading, Image, Tag, Text } from "@chakra-ui/react";
 import { options } from "lib/data";
-import { urlFor } from "lib/sanityClient";
+import { urlFor } from "lib/sanity.client";
 import Link from "next/link";
 import React from "react";
 
@@ -24,9 +24,9 @@ const FeaturedPost = ({ featuredPost }) => {
             >
               <Tag
                 size="sm"
-                className="mb-1 md:mb-3 bg-opacity-20 bg-white text-gray-300"
+                className="mb-1 md:mb-3 bg-opacity-20 bg-white text-gray-100"
               >
-                {featuredPost?.categories[0]?.title}
+                {featuredPost?.category}
               </Tag>
               <Heading color="white" className="mb-2 md:mb-5 text-center">
                 {featuredPost?.title}

@@ -9,7 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { options } from "lib/data";
-import { urlFor } from "lib/sanityClient";
+import { urlFor } from "lib/sanity.client";
 import Link from "next/link";
 import React from "react";
 
@@ -60,7 +60,7 @@ const EditorPic = ({ editorPic }) => {
             absolute top-[30px] right-[30px]
             "
           >
-            {editorPic?.categories[0]?.title}
+            {editorPic?.category}
           </Tag>
         </Box>
       </Link>

@@ -9,10 +9,10 @@ import {
   DrawerOverlay,
   Flex,
   HStack,
-  Spacer,
   Stack,
   Text,
   Icon,
+  Image,
 } from "@chakra-ui/react";
 import React from "react";
 import {
@@ -45,7 +45,11 @@ const Sidebar = ({ isOpen, placement, onClose, finalFocusRef, size }) => {
               className="cursor-pointer hover:scale-105 transition-all duration-200 "
               onClick={onClose}
             >
-              ZAPLIN
+              <Image
+                src="/images/logo-black.png"
+                alt=""
+                className="w-[120px] -mt-[35px]"
+              />
             </Link>
           </DrawerHeader>
 
@@ -129,36 +133,32 @@ const Sidebar = ({ isOpen, placement, onClose, finalFocusRef, size }) => {
               className="w-full"
             >
               <HStack className="pt-1" spacing="15px">
-                <Icon
-                  as={AiOutlineTwitter}
-                  color="Black"
-                  fontSize="24px"
-                  className="cursor-pointer hover:scale-105 transition-all duration-200"
-                />
-                <Icon
-                  as={AiFillInstagram}
-                  color="Black"
-                  fontSize="24px"
-                  className="cursor-pointer hover:scale-105 transition-all duration-200"
-                />
-                <Icon
-                  as={AiFillLinkedin}
-                  color="Black"
-                  fontSize="24px"
-                  className="cursor-pointer hover:scale-105 transition-all duration-200"
-                />
-              </HStack>
-              <Spacer />
-              <Text fontSize="md" fontWeight="bold">
-                <Link
-                  href="/"
-                  className="cursor-pointer hover:scale-105 transition-all duration-200 "
-                  _hover={{ opacity: 0.8 }}
-                  onClick={onClose}
-                >
-                  Sign up
+                <Link href="https://twitter.com/">
+                  <Icon
+                    as={AiOutlineTwitter}
+                    fontSize="24px"
+                    color="Black"
+                    className="cursor-pointer hover:scale-105 transition-all duration-200"
+                  />
                 </Link>
-              </Text>
+                <Link href="https://www.instagram.com/">
+                  <Icon
+                    as={AiFillInstagram}
+                    fontSize="24px"
+                    color="Black"
+                    className="cursor-pointer hover:scale-105 transition-all duration-200"
+                  />
+                </Link>
+
+                <Link href="https://www.linkedin.com/">
+                  <Icon
+                    as={AiFillLinkedin}
+                    fontSize="24px"
+                    color="Black"
+                    className="cursor-pointer hover:scale-105 transition-all duration-200"
+                  />
+                </Link>
+              </HStack>
             </Flex>
           </DrawerFooter>
         </DrawerContent>

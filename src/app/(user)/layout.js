@@ -4,11 +4,15 @@ import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import { Footer, NavBar } from "components";
+
 import { QueryClient, QueryClientProvider } from "react-query";
+import { Provider } from "../context";
+
 import "../globals.css";
 
 export default function RootLayout({ children }) {
   const queryClient = new QueryClient();
+
   return (
     <html lang="en">
       {/*
@@ -20,9 +24,11 @@ export default function RootLayout({ children }) {
         <CacheProvider>
           <ChakraProvider>
             <QueryClientProvider client={queryClient}>
-              <NavBar />
-              {children}
-              <Footer />
+              <Provider>
+                <NavBar />
+                {children}
+                <Footer />
+              </Provider>
             </QueryClientProvider>
           </ChakraProvider>
         </CacheProvider>

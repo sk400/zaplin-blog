@@ -1,4 +1,4 @@
-import { client } from "lib/sanityClient";
+import { client } from "lib/sanity.client";
 import { postDetailQuery } from "lib/sanityQueries";
 
 export default async function handler(req, res) {

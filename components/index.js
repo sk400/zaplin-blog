@@ -9,4 +9,4 @@ export { default as Searchbar } from "./Searchbar";
 export { default as FeaturedPost } from "./FeaturedPost";
 export { default as EditorPics } from "./EditorPics";
 export { default as Loader } from "./Loader";
-// export { default as RichTextComponents } from "./RichTextComponents";
+export { default as NoPosts } from "./NoPosts";

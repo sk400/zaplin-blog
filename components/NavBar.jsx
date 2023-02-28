@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
-import Searchbar from "./Searchbar";
+
 import {
   Center,
   Divider,
@@ -8,6 +8,7 @@ import {
   Heading,
   HStack,
   IconButton,
+  Image,
   Spacer,
   Text,
   useDisclosure,
@@ -21,6 +22,7 @@ import {
   AiFillLinkedin,
 } from "react-icons/ai";
 import { Icon } from "@chakra-ui/react";
+
 const NavBar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
@@ -35,27 +37,14 @@ const NavBar = () => {
         <Center>
           <Heading fontSize="lg" color="white">
             <Link href="/" color="white" _hover={{ opacity: 0.8 }}>
-              ZAPLIN
+              <Image src="/images/zaplin.png" alt="" className="w-[80px]" />
             </Link>
           </Heading>
         </Center>
         <Spacer />
-        <Center>
-          <Searchbar />
-        </Center>
-        {/* <Center style={{ display: showSearchBar ? "flex" : "none" }}>
-          <Searchbar />
-        </Center> */}
+
         <Spacer />
         <Center>
-          {/* <Center className="md:hidden">
-            <IconButton
-              aria-label="Toggle searchbar"
-              icon={<SearchIcon color="white" fontSize="xl" />}
-              size="md"
-              onClick={() => setShowSearchBar(!showSearchBar)}
-            />
-          </Center> */}
           <Center className="md:hidden">
             <IconButton
               aria-label="Toggle drawer"
@@ -68,12 +57,7 @@ const NavBar = () => {
 
           <Center className="hidden md:flex items-center">
             <HStack spacing="10px">
-              <Link
-                href="/"
-                color="white"
-                _hover={{ opacity: 0.8 }}
-                // fontFamily="Montserrat"
-              >
+              <Link href="/" color="white" _hover={{ opacity: 0.8 }}>
                 Home
               </Link>
               <Link href="/about" color="white" _hover={{ opacity: 0.8 }}>
@@ -90,9 +74,16 @@ const NavBar = () => {
               className="mx-1.5"
             />
             <HStack className="pt-1">
-              <Icon as={AiOutlineTwitter} color="white" fontSize="lg" />
-              <Icon as={AiFillInstagram} color="white" fontSize="lg" />
-              <Icon as={AiFillLinkedin} color="white" fontSize="lg" />
+              <Link href="https://twitter.com/">
+                <Icon as={AiOutlineTwitter} color="white" fontSize="lg" />
+              </Link>
+              <Link href="https://www.instagram.com/">
+                <Icon as={AiFillInstagram} color="white" fontSize="lg" />
+              </Link>
+
+              <Link href="https://www.linkedin.com/">
+                <Icon as={AiFillLinkedin} color="white" fontSize="lg" />
+              </Link>
             </HStack>
           </Center>
         </Center>
@@ -110,6 +101,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-// facebook, twitter, linkedIn, instagram
-// const [showSearchBar, setShowSearchBar] = useState(false);

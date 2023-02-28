@@ -8,7 +8,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { options } from "lib/data";
-import { urlFor } from "lib/sanityClient";
+import { urlFor } from "lib/sanity.client";
 import Link from "next/link";
 import React from "react";
 
@@ -44,7 +44,7 @@ const BlogCard = ({ post }) => {
             absolute top-[30px] right-[30px]
             "
             >
-              {post?.categories[0]?.title}
+              {post?.category}
             </Tag>
           </CardBody>
         </Card>
