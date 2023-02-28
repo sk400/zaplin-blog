@@ -79,29 +79,7 @@ const Sidebar = ({ isOpen, placement, onClose, finalFocusRef, size }) => {
               </Link>
 
               <Link
-                href="/about"
-                color="black"
-                _hover={{ opacity: 0.8 }}
-                className="capitalize font-semibold"
-                onClick={onClose}
-              >
-                <HStack
-                  spacing="15px"
-                  className="hover:bg-gray-300 
-              px-2 py-2 rounded-sm transition-colors duration-200 cursor-pointer
-              "
-                >
-                  <Icon
-                    as={FcAbout}
-                    color="Black"
-                    fontSize="16px"
-                    className=""
-                  />
-                  <Text>About</Text>
-                </HStack>
-              </Link>
-              <Link
-                href="/posts"
+                href="/post"
                 color="black"
                 _hover={{ opacity: 0.8 }}
                 className="capitalize font-semibold"

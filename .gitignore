@@ -34,3 +34,5 @@ yarn-error.log*
 
 # planning
 todo.js
+
+.vercel
