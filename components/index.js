@@ -10,3 +10,7 @@ export { default as FeaturedPost } from "./FeaturedPost";
 export { default as EditorPics } from "./EditorPics";
 export { default as Loader } from "./Loader";
 export { default as NoPosts } from "./NoPosts";
+export { default as Provider } from "./Provider";
+export { default as PostsPageContents } from "./PostsPageContents";
+export { default as PostDetailsPageContents } from "./PostDetailsPageContents";
+export { default as LayOut } from "./LayOut";

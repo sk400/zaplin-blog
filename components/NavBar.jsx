@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 
 import {
   Center,
@@ -72,14 +72,20 @@ const NavBar = () => {
             />
             <HStack className="pt-1">
               <Link href="https://twitter.com/">
-                <Icon as={AiOutlineTwitter} color="white" fontSize="lg" />
+                <Icon color="white" fontSize="lg">
+                  <AiOutlineTwitter />
+                </Icon>
               </Link>
               <Link href="https://www.instagram.com/">
-                <Icon as={AiFillInstagram} color="white" fontSize="lg" />
+                <Icon color="white" fontSize="lg">
+                  <AiFillInstagram />
+                </Icon>
               </Link>
 
               <Link href="https://www.linkedin.com/">
-                <Icon as={AiFillLinkedin} color="white" fontSize="lg" />
+                <Icon color="white" fontSize="lg">
+                  <AiFillLinkedin />
+                </Icon>
               </Link>
             </HStack>
           </Center>

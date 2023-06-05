@@ -1,10 +1,11 @@
-import { SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid } from "components/chakraui";
 import React from "react";
 import EditorPic from "./EditorPic";
+import { fetchEditorPics } from "utils/fetchEditorPics";
 
-const EditorPics = ({ editorPics }) => {
-  // console.log(editorPics);
-  const numbers = [1, 2, 3];
+const EditorPics = async () => {
+  const editorPics = await fetchEditorPics();
+
   return (
     <SimpleGrid minChildWidth="300px" spacing="40px">
       {editorPics?.map((editorPic) => (

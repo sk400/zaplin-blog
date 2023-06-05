@@ -1,4 +1,4 @@
-import { Box, Divider, Heading, Image, Tag, Text } from "@chakra-ui/react";
+import { Box, Divider, Heading, Image, Tag, Text } from "components/chakraui";
 import { options } from "lib/data";
 import { urlFor } from "lib/sanity.client";
 import Link from "next/link";

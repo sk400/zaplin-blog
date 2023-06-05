@@ -1,4 +1,4 @@
-import { SimpleGrid } from "@chakra-ui/react";
+import { SimpleGrid } from "components/chakraui";
 import React from "react";
 import BlogCard from "./BlogCard";
 

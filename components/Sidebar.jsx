@@ -1,3 +1,5 @@
+"use client";
+
 import { Link } from "@chakra-ui/next-js";
 import {
   Drawer,
@@ -21,7 +23,7 @@ import {
   AiOutlineTwitter,
   AiFillHome,
 } from "react-icons/ai";
-import { FcAbout } from "react-icons/fc";
+
 import { MdArticle } from "react-icons/md";
 
 const Sidebar = ({ isOpen, placement, onClose, finalFocusRef, size }) => {
@@ -69,11 +71,16 @@ const Sidebar = ({ isOpen, placement, onClose, finalFocusRef, size }) => {
               "
                 >
                   <Icon
-                    as={AiFillHome}
                     color="Black"
-                    fontSize="16px"
+                    sx={{
+                      width: "30px",
+                      height: "24px",
+                      mt: "10px",
+                    }}
                     className=""
-                  />
+                  >
+                    <AiFillHome />
+                  </Icon>
                   <Text>Home</Text>
                 </HStack>
               </Link>
@@ -92,11 +99,16 @@ const Sidebar = ({ isOpen, placement, onClose, finalFocusRef, size }) => {
               "
                 >
                   <Icon
-                    as={MdArticle}
                     color="Black"
-                    fontSize="16px"
+                    sx={{
+                      width: "30px",
+                      height: "24px",
+                      mt: "10px",
+                    }}
                     className=""
-                  />
+                  >
+                    <MdArticle />
+                  </Icon>
                   <Text>Articles</Text>
                 </HStack>
               </Link>
@@ -113,28 +125,31 @@ const Sidebar = ({ isOpen, placement, onClose, finalFocusRef, size }) => {
               <HStack className="pt-1" spacing="15px">
                 <Link href="https://twitter.com/">
                   <Icon
-                    as={AiOutlineTwitter}
                     fontSize="24px"
                     color="Black"
                     className="cursor-pointer hover:scale-105 transition-all duration-200"
-                  />
+                  >
+                    <AiOutlineTwitter />
+                  </Icon>
                 </Link>
                 <Link href="https://www.instagram.com/">
                   <Icon
-                    as={AiFillInstagram}
                     fontSize="24px"
                     color="Black"
                     className="cursor-pointer hover:scale-105 transition-all duration-200"
-                  />
+                  >
+                    <AiFillInstagram />
+                  </Icon>
                 </Link>
 
                 <Link href="https://www.linkedin.com/">
                   <Icon
-                    as={AiFillLinkedin}
                     fontSize="24px"
                     color="Black"
                     className="cursor-pointer hover:scale-105 transition-all duration-200"
-                  />
+                  >
+                    <AiFillLinkedin />
+                  </Icon>
                 </Link>
               </HStack>
             </Flex>

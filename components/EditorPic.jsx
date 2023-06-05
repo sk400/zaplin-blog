@@ -1,13 +1,4 @@
-import {
-  Box,
-  Card,
-  CardBody,
-  Heading,
-  Image,
-  Stack,
-  Tag,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Heading, Image, Stack, Tag, Text } from "components/chakraui";
 import { options } from "lib/data";
 import { urlFor } from "lib/sanity.client";
 import Link from "next/link";

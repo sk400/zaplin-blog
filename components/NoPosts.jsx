@@ -1,5 +1,4 @@
-import { Button, Center, Flex, Text } from "@chakra-ui/react";
-import React from "react";
+import { Button, Center, Flex, Text } from "components/chakraui";
 
 const NoPosts = ({ searching }) => {
   const state = searching ? "search term" : "category";

@@ -1,12 +1,7 @@
-"use client";
-
-import { Loader, TopContainer } from "components";
-import React from "react";
-import { useQuery } from "react-query";
-import { fetchPostDetails } from "utils/fetchPostDetails";
-import { PortableText } from "@portabletext/react";
-import { RichTextComponents } from "components/RichTextComponents";
+import { PostDetailsPageContents } from "components";
+import { client } from "lib/sanity.client";
 import { allPostsQuery } from "lib/sanityQueries";
+import { fetchPostDetails } from "utils/fetchPostDetails";
 
 const getAllSlugs = async () => {
   const posts = await client.fetch(allPostsQuery);
@@ -25,28 +20,12 @@ export async function generateStaticParams() {
   }));
 }
 
-const Page = ({ params: { slug } }) => {
-  // console.log(slug);
-
-  const {
-    data: postDetail,
-    isFetching,
-    error,
-  } = useQuery("postDetail", () => fetchPostDetails(slug));
-
-  if (isFetching) return <Loader />;
-
-  if (error) return "An unknown error occured";
+const Page = async ({ params: { slug } }) => {
+  const postDetails = await fetchPostDetails(slug);
 
   return (
     <>
-      <TopContainer featuredPost={postDetail} />
-      <article className="max-w-5xl py-7 mx-auto px-5">
-        <PortableText
-          value={postDetail?.body}
-          components={RichTextComponents}
-        />
-      </article>
+      <PostDetailsPageContents postDetails={postDetails} />
     </>
   );
 };

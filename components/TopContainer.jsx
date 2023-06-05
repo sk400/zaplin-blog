@@ -1,8 +1,7 @@
-import { Box, Center, Heading, Tag, Text } from "@chakra-ui/react";
+import { Box, Heading, Tag, Text } from "components/chakraui";
 import { urlFor } from "lib/sanity.client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const TopContainer = ({ featuredPost }) => {
   return (

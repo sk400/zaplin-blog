@@ -1,18 +1,8 @@
-"use client";
-
-import { CacheProvider } from "@chakra-ui/next-js";
-import { ChakraProvider } from "@chakra-ui/react";
-
-import { Footer, NavBar } from "components";
-
-import { QueryClient, QueryClientProvider } from "react-query";
-import { Provider } from "../context";
+import { Footer, LayOut, NavBar, Provider } from "components";
 
 import "../globals.css";
 
 export default function RootLayout({ children }) {
-  const queryClient = new QueryClient();
-
   return (
     <html lang="en">
       {/*
@@ -21,17 +11,7 @@ export default function RootLayout({ children }) {
       */}
       <head />
       <body className="bg-white">
-        <CacheProvider>
-          <ChakraProvider>
-            <QueryClientProvider client={queryClient}>
-              <Provider>
-                <NavBar />
-                {children}
-                <Footer />
-              </Provider>
-            </QueryClientProvider>
-          </ChakraProvider>
-        </CacheProvider>
+        <LayOut>{children}</LayOut>
       </body>
     </html>
   );

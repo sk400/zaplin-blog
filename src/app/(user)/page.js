@@ -1,20 +1,16 @@
-"use client";
+import { Box, Flex, Heading, Icon, Spacer, Text } from "components/chakraui";
+import { fetchAllPosts } from "utils/fetchAllPosts";
+import { BlogList, EditorPics, FeaturedPost, TopContainer } from "components";
 
-import { Box, Flex, Heading, HStack, Spacer, Text } from "@chakra-ui/react";
-import {
-  BlogList,
-  EditorPics,
-  FeaturedPost,
-  Loader,
-  TopContainer,
-} from "components";
-import { ReactQueryDevtools } from "react-query/devtools";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { Link } from "@chakra-ui/next-js";
-import { useGlobalData } from "../context";
+import { BsArrowRight } from "react-icons/bs";
+import Link from "next/link";
 
-const Page = () => {
-  const { featuredPost, editorPics, popularPosts } = useGlobalData();
+const Page = async () => {
+  const allPosts = await fetchAllPosts();
+
+  const featuredPost = allPosts[Math.floor(Math.random() * allPosts?.length)];
+
+  const popularPosts = allPosts?.slice(0, 6);
 
   return (
     <Box className="">
@@ -34,7 +30,9 @@ const Page = () => {
             <Text fontSize="sm" fontWeight="bold" className=" cursor-pointer">
               View all
             </Text>
-            <ArrowForwardIcon className="sm:text-lg" />
+            <Icon>
+              <BsArrowRight />
+            </Icon>
           </Link>
         </Flex>
 
@@ -49,7 +47,7 @@ const Page = () => {
       {/* Editor pics */}
       <Box className="px-5 md:px-16 py-10">
         <Heading className="mb-7 ">Editor pics</Heading>
-        <EditorPics editorPics={editorPics} />
+        <EditorPics />
       </Box>
     </Box>
   );

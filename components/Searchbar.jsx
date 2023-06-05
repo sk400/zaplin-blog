@@ -1,9 +1,6 @@
-"use client";
+import { Icon, Input, InputGroup, InputLeftElement } from "components/chakraui";
 
-import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
-import React from "react";
-import { useQuery } from "react-query";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const Searchbar = ({ setInputText, setSearchTerm, inputText }) => {
   const handleSubmit = (e) => {
@@ -15,7 +12,17 @@ const Searchbar = ({ setInputText, setSearchTerm, inputText }) => {
     <form onSubmit={handleSubmit} className="px-5">
       <InputGroup>
         <InputLeftElement pointerEvents="none">
-          <SearchIcon color="gray" fontSize="sm" />
+          <Icon
+            color="gray"
+            sx={{
+              width: "30px",
+              height: "25px",
+              mt: 3,
+              ml: 3,
+            }}
+          >
+            <AiOutlineSearch />
+          </Icon>
         </InputLeftElement>
         <Input
           type="text"
