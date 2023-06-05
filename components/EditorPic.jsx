@@ -7,7 +7,7 @@ import React from "react";
 const EditorPic = ({ editorPic }) => {
   return (
     <>
-      <Link href={`/post/2`}>
+      <Link href={`/post/${editorPic?.slug?.current}`}>
         <Box className="relative hover:scale-105 transition-transform duration-200 cursor-pointer">
           <Image
             src={urlFor(editorPic?.mainImage)?.url()}
