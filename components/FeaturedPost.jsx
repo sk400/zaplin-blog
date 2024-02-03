@@ -5,7 +5,7 @@ import Link from "next/link";
 import React from "react";
 
 const FeaturedPost = ({ featuredPost }) => {
-  // console.log(featuredPost);
+  console.log(featuredPost);
   return (
     <>
       <Link href={`/post/${featuredPost?.slug?.current}`}>
@@ -37,8 +37,7 @@ const FeaturedPost = ({ featuredPost }) => {
                 noOfLines={2}
                 className="text-center px-5"
               >
-                Redesigned around the next-generation M2 chip, MacBook Air is
-                strikingly thin and brings exceptional speed and power
+                {featuredPost?.description}
               </Text>
               <Divider className="w-[50px] my-3" />
               <Text fontSize="xs" color="white">
